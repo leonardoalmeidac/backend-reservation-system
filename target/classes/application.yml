@@ -1,0 +1,43 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: gallery-reservation-backend
+  
+  datasource:
+    url: jdbc:postgresql://localhost:5432/gallery_reservation
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+  
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+  
+  jackson:
+    serialization:
+      write-dates-as-timestamps: false
+    time-zone: UTC
+
+# JWT Configuration
+jwt:
+  secret: x2FkR553wNk2QISnfJT0YpW606YuWkEIa3+tdAx0UM8=
+  expiration: 86400000  # 24 hours in milliseconds
+
+# Email Configuration (placeholder)
+spring.mail:
+  host: localhost
+  port: 1025
+  username: 
+  password: 
+
+logging:
+  level:
+    com.gallery.reservation: DEBUG
+    org.springframework.security: DEBUG
